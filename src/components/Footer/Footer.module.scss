@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+footer {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.aboutUs {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    background-color: rgb(146, 146, 146);
+
+    .info:first-child {
+        border-right: 1px solid rgb(233, 233, 233);
+    }
+
+    .info {
+        width: 49%;
+
+        h3 {
+            padding: 0 10px 10px;
+        }
+
+        p {
+            padding: 10px;
+            color: white;
+        }
+
+        .contacts {
+            list-style-type: none;
+            padding: 10px;
+
+            li {
+                padding: 5px 0;
+
+                a:hover {
+                    color: rgb(75, 190, 219);
+                }
+    
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+        }
+    }
+}
