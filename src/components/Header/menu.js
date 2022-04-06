@@ -1,16 +1,20 @@
 const menu = [
-    {
-        title: 'Products',
-        link: '/'
-    },
-    {
-        title: 'Pricing',
-        link: '/'
-    },
-    {
-        title: 'Dashboard',
-        link: '/'
-    },
-]
+  {
+    title: "Home",
+    link: "/",
+  },
+  {
+    title: "Products",
+    link: "/product",
+  },
+  {
+    title: "Pricing",
+    link: "/pricing",
+  },
+  {
+    title: "Dashboard",
+    link: "/dashboard",
+  },
+];
 
 export default menu

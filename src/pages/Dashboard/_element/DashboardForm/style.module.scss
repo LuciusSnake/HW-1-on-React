@@ -1,0 +1,12 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    margin: 15px 0;
+  }
+
+  .content {
+    margin-bottom: 15px;
+  }
+}
