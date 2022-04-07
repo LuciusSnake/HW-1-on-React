@@ -23,15 +23,14 @@ function DashboardForm({ onClose }) {
 
   const onSave = () => {
     if (state.title.length > 5) {
-      alert("Mat' v kino vodil");
+      alert("Количество символов не должно превышать 5");
     }
 
     if (state.content.length > 15) {
-      alert("i baty tozhe");
+      alert("Количество символов не должно превышать 15");
     }
 
     if (state.title.length < 5 && state.content.length < 15) {
-      alert("good jop");
       onClose();
     }
   };

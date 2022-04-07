@@ -6,7 +6,6 @@
 
 main {
     margin: 0 auto;
-    width: 1200px;
     background-color: rgb(199, 194, 194);
 }
 
@@ -14,6 +13,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 50px;
 
     .card {
         margin: 70px 0;
