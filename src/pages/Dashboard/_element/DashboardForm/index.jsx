@@ -89,7 +89,7 @@ function DashboardForm({ onClose, setPosts, editModal, setEditModal }) {
   return (
     <div className={style.form}>
       <label>
-        Title
+        <p>Title</p>
         <input
           className={style.title}
           type="text"
@@ -99,7 +99,7 @@ function DashboardForm({ onClose, setPosts, editModal, setEditModal }) {
       </label>
 
       <label>
-        Content
+        <p>Content</p>
         <textarea
           className={style.content}
           value={state.content}
