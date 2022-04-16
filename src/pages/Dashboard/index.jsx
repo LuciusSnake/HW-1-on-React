@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+
 import Modal from '../../components/Modal';
 import DashboardForm from './_element/DashboardForm';
-import style from './style.module.scss';
 import Card from '../../components/Card/Card'
 import { getPostsApi, removePostApi } from "../../helper/api/posts";
+
+import style from './style.module.scss';
 
 
 function Dashboard() {
@@ -31,13 +33,13 @@ function Dashboard() {
   }
 
   const onCheckboxClick = (id) => {
-  //   const hasCheckbox = checkedCheckboxes.includes(id);
+    const hasCheckbox = checkedCheckboxes.includes(id);
 
-  //   if(hasCheckbox) {
-  //     setCheckedCheckboxes(prevState => prevState.filter(item => item !== id));
-  //   } else {
-  //     setCheckedCheckboxes(prevState => [...prevState, id]);
-  //   }
+    if(hasCheckbox) {
+      setCheckedCheckboxes(prevState => prevState.filter(item => item !== id));
+    } else {
+      setCheckedCheckboxes(prevState => [...prevState, id]);
+    }
   }
 
   useEffect(() => {
@@ -51,13 +53,17 @@ function Dashboard() {
 
   return (
     <div>
-      <button className={style.button} onClick={onToggle}>
-        Open
-      </button>
+      <div className={style.activeContainer}>
+        <button className={style.button} onClick={onToggle}>
+          Open
+        </button>
 
-      {!!checkedCheckboxes.length && (
+        {/* {!!checkedCheckboxes.length && (
+          <h3>Активных постов: {checkedCheckboxes.length}</h3>
+        )} */}
+
         <h3>Активных постов: {checkedCheckboxes.length}</h3>
-      )}
+      </div>
 
       {posts.map((post, index) => (
         <Card

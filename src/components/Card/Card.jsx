@@ -5,7 +5,7 @@ import style from './card.module.scss';
 function Card({post, index, onRemove, onEdit, checkedCheckboxes, onCheckboxClick}) {
   return (
     <div className={style.card}>
-      <input type={"checkbox"} checked={true} onClick={onCheckboxClick} />
+      <input type={"checkbox"} checked={checkedCheckboxes.includes(post.id)} onChange={() => onCheckboxClick(post.id)} />
 
       <h3>
         {`${index}. ${post.title}`}
