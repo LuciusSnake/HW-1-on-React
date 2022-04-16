@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import style from './card.module.scss';
 
 
 function Card({post, index, onRemove, onEdit, checkedCheckboxes, onCheckboxClick}) {
+  const checked = useMemo(
+    () => checkedCheckboxes.includes(post.id),
+    [checkedCheckboxes, post]
+  );
+  
   return (
     <div className={style.card}>
-      <input type={"checkbox"} checked={checkedCheckboxes.includes(post.id)} onChange={() => onCheckboxClick(post.id)} />
+      <input type={"checkbox"} checked={checked} onChange={() => onCheckboxClick(post.id)} />
 
       <h3>
         {`${index}. ${post.title}`}
@@ -19,4 +24,4 @@ function Card({post, index, onRemove, onEdit, checkedCheckboxes, onCheckboxClick
   );
 }
 
-export default Card
+export default React.memo(Card);

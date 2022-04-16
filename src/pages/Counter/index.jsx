@@ -1,19 +1,21 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
+import Buttons from "./_elements/Buttons";
+import CountShower from "./_elements/Counter";
 
 function Counter() {
   const [ counter, setCounter ] = useState(0);
   const [ isChangeValue, setChangeValue ] = useState(false);
   const [ isRender, setRender ] = useState(false);
 
-  const h1 = useRef(null);
+  // const h1 = useRef(null);
 
-  const increment = () => {
+  const increment = useCallback(() => {
     setCounter((prevState) => prevState + 1);
-  }
+  }, []);
 
-  const decrement = () => {
+  const decrement = useCallback(() => {
     setCounter((prevState) => prevState - 1);
-  }
+  }, []);
 
   useEffect(() => { setRender(true); }, [])
 
@@ -27,13 +29,12 @@ function Counter() {
 
   return (
     <div>
-      <h1 ref={h1}>Counter: {counter}</h1>
+      <CountShower counter={counter} />
 
       {isRender && <h2>Component was rendered</h2>}
       {isChangeValue && <h4>Counter was changed</h4>}
 
-      <button onClick={increment}>+</button>
-      <button onClick={decrement}>-</button>
+      <Buttons increment={increment} decrement={decrement} />
     </div>
   );
 }

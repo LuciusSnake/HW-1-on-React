@@ -15,6 +15,7 @@ import {
   Main,
   Dashboard,
   UnknownPage,
+  Users
 } from "../../pages";
 
 
@@ -26,6 +27,7 @@ function RouteComponent() {
       <Route path={"/pricing"} element={<Pricing />} />
       <Route path={"/dashboard"} element={<Dashboard />} />
       <Route path={"/counter"} element={<Counter />} />
+      <Route path={"/users"} element ={<Users />}/>
       <Route path={"*"} element={<UnknownPage />} />
     </Routes>
   );
