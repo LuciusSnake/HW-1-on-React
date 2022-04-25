@@ -4,8 +4,8 @@ import style from './style.module.scss'
 
 
 const initialState = {
+  name: "",
   username: "",
-  nickname: "",
   email: "",
   city: "",
   street: "",
@@ -46,18 +46,18 @@ function UsersForm({ addToAllUsers }) {
         <h3>Добавление нового пользователя</h3>
         <input
           type="text"
-          placeholder="Username"
-          value={user.username}
+          placeholder="Name"
+          value={user.name}
           onChange={handleChange}
-          name={"username"}
+          name={"name"}
         />
 
         <input
           type="text"
-          placeholder="Nickname"
-          value={user.nickname}
+          placeholder="Username"
+          value={user.username}
           onChange={handleChange}
-          name={"nickname"}
+          name={"username"}
         />
 
         <input
@@ -92,7 +92,9 @@ function UsersForm({ addToAllUsers }) {
           name={"suite"}
         />
 
+        <div className={style.submit}>
         <input onClick={handleClick} type="submit" value="Отправить" />
+        </div>
       </div>
     </form>
   );

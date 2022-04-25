@@ -1,9 +1,11 @@
 import React from 'react'
+import style from './style.module.scss'
 
 
 function UsersTable({ users, isLoading }) {
   return (
-    <table>
+    <div className={style.wrapper}>
+      <table className={style.tableBlur}>
       <thead>
         <tr>
           <th>№</th>
@@ -27,9 +29,9 @@ function UsersTable({ users, isLoading }) {
               username,
               email,
               address: { city, street, suite },
-            }) => (
-              <tr key={id}>
-                <td>{id}</td>
+            }, index) => (
+              <tr key={index}>
+                <td>{index}</td>
                 <td>{name}</td>
                 <td>{username}</td>
                 <td>{email}</td>
@@ -41,6 +43,7 @@ function UsersTable({ users, isLoading }) {
           )}
       </tbody>
     </table>
+    </div>
   );
 }
 
